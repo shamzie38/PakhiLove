@@ -3,24 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day</title>
+    <title>Valentine's Surprise</title>
     <style>
         body {
-            text-align: center;
             font-family: Arial, sans-serif;
-            background-color: #ADD8E6;
+            background-color: #ADD8E6; /* Light Sky Blue */
+            margin: 0;
+            padding: 0;
         }
         h1 {
-            color: black;
+            color: red;
+            text-align: center;
         }
         p {
-            font-size: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+        /* Button on the left side */
+        .left-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ff4d79;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .left-button:hover {
+            background-color: #ff1a66;
+        }
+        /* Hidden section */
+        #surprise {
+            display: none;
+            text-align: center;
+            margin-top: 30px;
+        }
+        #surprise h2 {
+            font-size: 30px;
+            color: black;
+        }
+        #surprise img {
+            width: 400px; /* Adjust size */
+            border-radius: 10px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <h1> Happy Valentines Day My Jaan Pakhi 🖤 </h1>
+
+    <h1>Happy Valentine's Day My Jaan Pakhi 🖤</h1>
     <p>Are You Ready To Be Showered with Love? 🍆💦</p>
-    <img src="https://source.unsplash.com/600x400/?love,romance" alt="Love Image">
+
+    <!-- Left side button -->
+    <button class="left-button" onclick="showSurprise()">What I Think of You? (Click Here)</button>
+
+    <!-- Hidden content -->
+    <div id="surprise">
+        <h2>You Are My Everything! ❤️</h2>
+        <img src="https://drive.google.com/uc?export=view&id=1fpr0HbhBXiv9GC0MmHBEPqPGBipIDi3H" alt="Love Image">
+    </div>
+
+    <script>
+        function showSurprise() {
+            document.getElementById("surprise").style.display = "block";
+        }
+    </script>
+
 </body>
 </html>
+
