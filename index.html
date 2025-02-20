@@ -325,64 +325,66 @@
     <h2>Our Story Continued...</h2>
 
     <div class="story-container">
-        <button class="nav-btn left-btn" onclick="prevSlide()">⬅️</button>
+        <button class="nav-btn left-btn" onclick="prevStorySlide()">⬅️</button>
         <div class="story-slide">
             <p id="story-text">Swipe to know what happened next:</p>
         </div>
-        <button class="nav-btn right-btn" onclick="nextSlide()">➡️</button>
+        <button class="nav-btn right-btn" onclick="nextStorySlide()">➡️</button>
     </div>
 </div>
+
 
 <!-- JavaScript for Swipeable Story -->
 <script>
     const storyTexts = [
-        "Swipe to know what happened next:",
-        "Our meeting was strange. It was confusing and a little heart-breaking. We thought it was the end.",
-        "But the universe had decided that our story should persevere.",
-        "So after not talking to each other for months, our paths crossed again.",
-        "But this time, we didn't hold each other back.",
-        "We spent time together only to learn...",
-        "That despite not even speaking each other's language...",
-        "And having very different lives...",
-        "We were quite similar.",
-        "We were similar in our silliness...",
-        "In our kindness and openness...",
-        "We were similar in terms of how we thought about life...",
-        "Mostly, we were similar in how we loved.",
-        "I warned you that if we decided to love each other, it would be explosive.",
-        "We love too hard—won't it be dangerous?",
-        "I warned you that despite our similarities, the differences wouldn't let us be together.",
-        "You told me you didn’t care and you asked for one weekend to change my mind.",
-        "You planned the most magical weekend for me.",
-        "You were afraid it didn’t work...",
-        "But deep down, I knew it did.",
-        "You loved me more every day and took care of me.",
-        "You never gave up.",
-        "You fought for me, and you made it happen.",
-        "We became best friends.",
-        "And every day, we learned about each other more.",
-        "Our bond was unbreakable.",
-        "And every day, we realized that our love was special.",
-        "It was written by God and it was meant to be.",
-        "We were meant to be. ❤ "
-    ];
+    "Swipe to know what happened next:",
+    "Our meeting was strange. It was confusing and a little heart-breaking. We thought it was the end.",
+    "But the universe had decided that our story should persevere.",
+    "So after not talking to each other for months, our paths crossed again.",
+    "But this time, we didn't hold each other back.",
+    "We spent time together only to learn...",
+    "That despite not even speaking each other's language...",
+    "And having very different lives...",
+    "We were quite similar.",
+    "We were similar in our silliness...",
+    "In our kindness and openness...",
+    "We were similar in terms of how we thought about life...",
+    "Mostly, we were similar in how we loved.",
+    "I warned you that if we decided to love each other, it would be explosive.",
+    "We love too hard—won't it be dangerous?",
+    "I warned you that despite our similarities, the differences wouldn't let us be together.",
+    "You told me you didn’t care and you asked for one weekend to change my mind.",
+    "You planned the most magical weekend for me.",
+    "You were afraid it didn’t work...",
+    "But deep down, I knew it did.",
+    "You loved me more every day and took care of me.",
+    "You never gave up.",
+    "You fought for me, and you made it happen.",
+    "We became best friends.",
+    "And every day, we learned about each other more.",
+    "Our bond was unbreakable.",
+    "And every day, we realized that our love was special.",
+    "It was written by God and it was meant to be.",
+    "We were meant to be. ❤ "
+];
 
-    let currentIndex = 0;
-    const storyTextElement = document.getElementById("story-text");
+let currentStoryIndex = 0;
+const storyTextElement = document.getElementById("story-text");
 
-    function nextSlide() {
-        if (currentIndex < storyTexts.length - 1) {
-            currentIndex++;
-            storyTextElement.innerText = storyTexts[currentIndex];
-        }
+function nextStorySlide() {
+    if (currentStoryIndex < storyTexts.length - 1) {
+        currentStoryIndex++;
+        storyTextElement.innerText = storyTexts[currentStoryIndex];
     }
+}
 
-    function prevSlide() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            storyTextElement.innerText = storyTexts[currentIndex];
-        }
+function prevStorySlide() {
+    if (currentStoryIndex > 0) {
+        currentStoryIndex--;
+        storyTextElement.innerText = storyTexts[currentStoryIndex];
     }
+}
+
 </script>
 
 <!-- Styles for Swipeable Story -->
