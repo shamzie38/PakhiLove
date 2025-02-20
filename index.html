@@ -29,29 +29,36 @@
             font-family: 'Chewy', cursive;
         }
 
-        /* Gift Box Styling */
-        .gift-box {
-            font-size: 80px;
-            cursor: pointer;
+        /* Love Letters Container */
+        .love-letters {
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Space between letters */
             margin-top: 30px;
-            transition: transform 4s ease-in-out;
         }
 
-        .gift-box:hover {
+        /* Love Letter Styling */
+        .love-letter {
+            width: 120px; /* Adjust size */
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .love-letter:hover {
             transform: scale(1.1);
         }
 
-        /* Hidden GIF */
+        /* Hidden GIF Styling */
         .hidden {
             display: none;
+            margin-top: 30px;
         }
 
-        #gift-content img {
-            max-width: 150%;
-            width: 500px;
+        .hidden img {
+            max-width: 100%;
+            width: 400px;
             height: auto;
             border-radius: 10px;
-            margin-top: 20px;
         }
 
         /* First section - Title and subtitle centered */
@@ -110,29 +117,6 @@
             }
         }
 
-        /* GIF Button Section */
-        .gif-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-top: 180px;
-        }
-
-        .gif-button img {
-            width: 150px;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .gif-title {
-            font-size: 20px;
-            color: #ff4d79;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
         /* Floating Hearts */
         .floating-heart {
             position: fixed;
@@ -155,75 +139,13 @@
             }
         }
 
-        /* Modal Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 20px;
+        /* Music Player Styling */
+        .music-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
             border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            position: relative;
-            overflow-y: auto;
-            max-height: 80vh;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        .modal img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        /* Close button */
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
-            cursor: pointer;
-            color: black;
-        }
-
-        .close:hover {
-            color: red;
-        }
-        /* Full-Screen Music Page */
-    #music-section {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background-color: #ADD8E6; /* Same blue background */
-    }
-    
-    #music-section h2 {
-        font-size: 35px;
-        color: #343a40;
-        margin-bottom: 30px;
-    }
-    
-    /* Music Player Styling */
-    .music-container {
-        background: rgba(255, 255, 255, 0.8);
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
 
     </style>
 </head>
@@ -249,41 +171,33 @@
         I love you with all my heart. ❤
     </p>
 
-    <!-- GIF Button Section -->
-    <div class="gif-container">
-        <button class="gif-button" onclick="openModal()">
-            <img src="https://i.imgur.com/JdgjoYd.gif" alt="GIF Button">
-        </button>
-        <p class="gif-title">What I Think of You ❤️<br>Click Here ⤴</p>
-    </div>
-
-    <!-- Popup Modal -->
-    <div id="popup-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>You Are Gay! ❤️</h2>
-            <img src="https://i.imgur.com/Hslk0C7.jpeg" alt="Love Image">
-        </div>
-    </div>
-
     <!-- Full-Screen New Section -->
     <div id="gift-section" class="full-screen">
         <h2>Jokes apart... here is what I truly think of you:</h2>
 
-        <!-- Clickable Gift Box -->
-        <div class="gift-box" onclick="revealGift()">
-            🎁
+        <!-- Clickable Love Letters -->
+        <div class="love-letters">
+            <img src="https://i.imgur.com/2PHZEmj.jpeg" alt="Love Letter" class="love-letter" onclick="revealGift(1)">
+            <img src="https://i.imgur.com/2PHZEmj.jpeg" alt="Love Letter" class="love-letter" onclick="revealGift(2)">
+            <img src="https://i.imgur.com/2PHZEmj.jpeg" alt="Love Letter" class="love-letter" onclick="revealGift(3)">
         </div>
 
-        <!-- Hidden GIF -->
-        <div id="gift-content" class="hidden">
-            <img src="https://media.tenor.com/icskYxNdY0wAAAAM/so-hot-the-things-they-do.gif" alt="So Hot GIF">
+        <!-- Hidden GIFs -->
+        <div id="gift-content-1" class="hidden">
+            <img src="https://media.tenor.com/DXEMdtqvaaQAAAAM/hes-funny-hes-smart-he-has-a-huge-dick-marla-mindelle.gif" alt="GIF 1">
+        </div>
+        <div id="gift-content-2" class="hidden">
+            <img src="https://49.media.tumblr.com/feb45c32031f50e953dbf0b2029a958d/tumblr_o35f5uLvFh1skpj8qo1_500.gif" alt="GIF 2">
+        </div>
+        <div id="gift-content-3" class="hidden">
+            <img src="https://media.tenor.com/icskYxNdY0wAAAAe/so-hot-the-things-they-do.png" alt="GIF 3">
         </div>
     </div>
-    <!-- Full-Screen Music Section -->
+
+    <!-- Music Section -->
     <div id="music-section" class="full-screen">
         <h2>I want to revisit how we met, but first, let's play some music.</h2>
-    
+
         <!-- Music Player -->
         <div class="music-container">
             <audio id="background-music" controls>
@@ -293,19 +207,13 @@
         </div>
     </div>
 
-
     <script>
-        function openModal() {
-            document.getElementById("popup-modal").style.display = "block";
-        }
+        function revealGift(num) {
+            document.querySelectorAll(".hidden").forEach(gift => {
+                gift.style.display = "none";
+            });
 
-        function closeModal() {
-            document.getElementById("popup-modal").style.display = "none";
-        }
-
-        function revealGift() {
-            document.querySelector(".gift-box").style.display = "none";
-            document.getElementById("gift-content").style.display = "block";
+            document.getElementById(`gift-content-${num}`).style.display = "block";
         }
 
         function scrollToGift() {
