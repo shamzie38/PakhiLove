@@ -43,6 +43,46 @@
         .spacer {
             height: 150px; /* Adds space before the message */
         }
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .modal img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: black;
+        }
+        .close:hover {
+            color: red;
+        }
+
 
         /* Message styling */
         .dancing-text {
@@ -51,6 +91,25 @@
             color: #343a40;
             padding: 0 20px; /* Prevents text from touching screen edges */
         }
+        .scroll-arrow {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 30px;
+        font-size: 30px;
+        color: #ff4d79;
+        animation: bounce 1s infinite alternate;
+        }
+    
+        @keyframes bounce {
+            from {
+                transform: translateX(-50%) translateY(0);
+            }
+            to {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
 
         /* GIF Button Section */
         .gif-container {
@@ -113,16 +172,14 @@
     <p class="dancing-text">
         Hi Jaan,<br><br>
         I know it's been almost a week since Valentine's Day, but I wanted to take my time to make you a nice present.
-        Since I have never learned HTML, and I am not nearly as smart, beautiful, talented, big-dicked 🍆, or handsome as you, I needed some extra time.<br><br>
-
-        Hope this makes you cum 💦, cry, or die of laughter. I hope it makes you smile.<br><br>
-
-        I love you with all my heart. ❤💖
+        Since I have never learned HTML, and I am not nearly as smart, beautiful, talented, big-dicked 🍆, or handsome as you, I needed some extra time.Hope this makes you cum 💦, cry, or die of laughter. I hope it makes you smile.
+        I love you with all my heart. ❤
     </p>
 
     <!-- GIF Button Section -->
     <div class="gif-container">
-        <button class="gif-button" onclick="showPopup()">
+        <button class="gif-button" onclick="openModal()">
+
             <img src="https://i.imgur.com/JdgjoYd.gif" alt="GIF Button">
         </button>
         <p class="gif-title">What I Think of You ❤️<br>Click Here!</p>
@@ -130,12 +187,14 @@
 
     <!-- JavaScript for Pop-Up -->
     <script>
-        function showPopup() {
-            let popupWindow = window.open("https://i.imgur.com/Hslk0C7.jpeg", "_blank", "width=500,height=500");
-            if (!popupWindow) {
-                alert("Please allow pop-ups to see your surprise! ❤️");
-            }
+        function openModal() {
+        document.getElementById("popup-modal").style.display = "block";
         }
+    
+        function closeModal() {
+        document.getElementById("popup-modal").style.display = "none";
+        }
+
         function createHeart() {
         const heart = document.createElement("div");
         heart.innerText = "❤";
@@ -153,6 +212,16 @@
 
     setInterval(createHeart, 300); // Creates a heart every 300ms
     </script>
+
+    <!-- Popup Modal -->
+<div id="popup-modal" class="modal">
+<div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>You Are Gay! ❤️</h2>
+    <img src="https://i.imgur.com/Hslk0C7.jpeg" alt="Love Image">
+</div>
+</div>
+
 
 </body>
 </html>
