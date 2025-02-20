@@ -17,6 +17,45 @@
             text-align: center;
         }
 
+            /* Full-Screen Section Styling */
+    .full-screen {
+        height: 100vh; /* Takes full screen */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff; /* White background */
+        color: #343a40;
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Chewy', cursive;
+    }
+    
+    /* Gift Box Styling */
+    .gift-box {
+        font-size: 80px; /* Big gift box */
+        cursor: pointer;
+        margin-top: 30px;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .gift-box:hover {
+        transform: scale(1.1); /* Slight bounce effect */
+    }
+    
+    /* Hidden GIF */
+    .hidden {
+        display: none;
+    }
+    
+    #gift-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+
         /* First section - Title and subtitle centered in full view */
         .header-container {
             height: 100vh; /* Takes full screen */
@@ -222,6 +261,14 @@
     setInterval(createHeart, 300); // Creates a heart every 300ms
     </script>
 
+    <script>
+    function revealGift() {
+        document.querySelector(".gift-box").style.display = "none"; // Hide gift box
+        document.getElementById("gift-content").style.display = "block"; // Show GIF
+    }
+    </script>
+
+
     <!-- Popup Modal -->
 <div id="popup-modal" class="modal">
 <div class="modal-content">
@@ -230,6 +277,21 @@
     <img src="https://i.imgur.com/Hslk0C7.jpeg" alt="Love Image">
 </div>
 </div>
+<!-- Full-Screen New Section -->
+<div id="gift-section" class="full-screen">
+    <h2>Jokes apart... here is what I think of you:</h2>
+
+    <!-- Clickable Gift Box -->
+    <div class="gift-box" onclick="revealGift()">
+        🎁 <!-- Emoji as the gift box -->
+    </div>
+
+    <!-- Hidden GIF (Revealed on Click) -->
+    <div id="gift-content" class="hidden">
+        <img src="https://media.tenor.com/icskYxNdY0wAAAAM/so-hot-the-things-they-do.gif" alt="So Hot GIF">
+    </div>
+</div>
+
 
 
 </body>
