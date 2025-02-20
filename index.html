@@ -169,6 +169,29 @@
             border-radius: 10px;
         }
 
+        .gif-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 250px; /* Increase space before the GIF */
+    }
+    
+    .gif-button img {
+        width: 120px; /* Reduce GIF size */
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .gif-title {
+        font-size: 20px;
+        color: #ff4d79;
+        font-weight: bold;
+        margin-top: 20px; /* Add spacing between title and image */
+    }
+
+
         /* Close button */
         .close {
             position: absolute;
@@ -278,6 +301,14 @@
 
             document.getElementById(`gift-content-${num}`).style.display = "block";
         }
+        function openModal() {
+        document.getElementById("popup-modal").style.display = "block";
+    }
+    
+    function closeModal() {
+        document.getElementById("popup-modal").style.display = "none";
+    }
+
 
         function scrollToGift() {
             document.getElementById("gift-section").scrollIntoView({ behavior: "smooth" });
