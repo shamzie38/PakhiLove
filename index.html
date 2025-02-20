@@ -443,16 +443,16 @@ function prevStorySlide() {
 
     <!-- Envelopes Grid -->
     <div class="envelope-grid">
-        <!-- Generate 10 envelopes -->
-        <script>
-            for (let i = 1; i <= 10; i++) {
-                document.write(`
-                    <div class="envelope" onclick="showMessage(${i})">
-                        <img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope">
-                    </div>
-                `);
-            }
-        </script>
+        <div class="envelope" onclick="showMessage(1)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(2)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(3)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(4)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(5)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(6)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(7)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(8)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(9)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(10)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
     </div>
 </div>
 
@@ -466,38 +466,43 @@ function prevStorySlide() {
 
 <!-- JavaScript for Envelopes -->
 <script>
-    const messages = [
-        "You stayed up late tutoring me for my exams when you had work. You were tired and sleepy but you didn't express a little bit of annoyance. You were determined to help me. ❤️",
-        "Every time you came over to my place, you washed my dishes even when I insisted not to. I never wanted or expected you to do it. You just did. 💖",
-        "When I missed my flight and cried for hours, you cried for me. I had never seen someone feel my pain as deeply as you did, and it surprised me. No one had ever shared my feelings like that before. 🥹",
-        "When we first met, I was struggling with my mental health and ended up hurting you. But you never judged me, accused me, or showed even a hint of anger. You just kept loving me. 💕",
-        "When we went skiing, you took off your ski boots more than 10 times and helped me. You didn’t prioritize yourself at all. You just accompanied me and helped me learn even while learning yourself. 🎿",
-        "When you moved in here, you cleaned the entire house for days, made everything perfect, and welcomed me in the most beautiful way. 🏡💞",
-        "You supported me through all my challenges with school, work, and friendships. You never judged me for my bad decisions. You always uplifted me. 🤍",
-        "When you taught me math, you were super patient with me even when I was annoyingly stupid. 💕",
-        "You always pushed me to go to new places, even if that meant living apart. You prioritized my ambition over anything else.",
-        "You loved me without conditions. No matter how imperfect I was, you loved me anyway.✨"
-    ];
+    document.addEventListener("DOMContentLoaded", function () {
+        const messages = [
+            "You stayed up late tutoring me for my exams when you had work. You were tired and sleepy but you didn't express a little bit of annoyance. You were determined to help me. ❤️",
+            "Every time you came over to my place, you washed my dishes even when I insisted not to. I never wanted or expected you to do it. You just did. 💖",
+            "When I missed my flight and cried for hours, you cried for me. I had never seen someone feel my pain as deeply as you did, and it surprised me. No one had ever shared my feelings like that before. 🥹",
+            "When we first met, I was struggling with my mental health and ended up hurting you. But you never judged me, accused me, or showed even a hint of anger. You just kept loving me. 💕",
+            "When we went skiing, you took off your ski boots more than 10 times and helped me. You didn’t prioritize yourself at all. You just accompanied me and helped me learn even while learning yourself. 🎿",
+            "When you moved in here, you cleaned the entire house for days, made everything perfect, and welcomed me in the most beautiful way. 🏡💞",
+            "You supported me through all my challenges with school, work, and friendships. You never judged me for my bad decisions. You always uplifted me. 🤍",
+            "When you taught me math, you were super patient with me even when I was annoyingly stupid. 💕",
+            "You always pushed me to go to new places, even if that meant living apart. You prioritized my ambition over anything else.",
+            "You loved me without conditions. No matter how imperfect I was, you loved me anyway.✨"
+        ];
 
-    function showMessage(index) {
-        let messagePopup = document.getElementById("message-popup");
-        let messageText = document.getElementById("message-text");
+        function showMessage(index) {
+            let messagePopup = document.getElementById("message-popup");
+            let messageText = document.getElementById("message-text");
 
-        // Ensure elements exist before modifying them
-        if (messagePopup && messageText) {
-            messageText.innerText = messages[index - 1];  // Set the correct message
-            messagePopup.classList.remove("hidden");  // Remove the hidden class
-            messagePopup.style.display = "flex"; // Ensure popup appears
+            if (messagePopup && messageText) {
+                messageText.innerText = messages[index - 1];
+                messagePopup.classList.remove("hidden");
+                messagePopup.style.display = "flex";
+            }
         }
-    }
 
-    function closeMessage() {
-        let messagePopup = document.getElementById("message-popup");
-        if (messagePopup) {
-            messagePopup.classList.add("hidden");  // Add back the hidden class
-            messagePopup.style.display = "none"; // Hide the popup
+        function closeMessage() {
+            let messagePopup = document.getElementById("message-popup");
+            if (messagePopup) {
+                messagePopup.classList.add("hidden");
+                messagePopup.style.display = "none";
+            }
         }
-    }
+
+        // Attach functions to window scope to ensure they work when clicked
+        window.showMessage = showMessage;
+        window.closeMessage = closeMessage;
+    });
 </script>
 
 <!-- Styles for Envelopes -->
@@ -534,7 +539,7 @@ function prevStorySlide() {
 
     /* Popup Styling */
     .popup {
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         position: fixed;
@@ -543,7 +548,7 @@ function prevStorySlide() {
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
-        z-index: 1000;
+        z-index: 2000; /* Make sure this is high enough */
     }
 
     .popup.hidden {
@@ -579,6 +584,7 @@ function prevStorySlide() {
         color: red;
     }
 </style>
+
 
 
 
