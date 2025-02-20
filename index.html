@@ -56,19 +56,24 @@
         }
         
         .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 50%;
-            text-align: center;
-            position: relative;
-        }
-        
-        .modal img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
+        background-color: white;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 90%; /* Shrinks the modal width */
+        max-width: 500px; /* Prevents it from getting too large */
+        text-align: center;
+        position: relative;
+        overflow-y: auto; /* Allows scrolling inside modal if needed */
+        max-height: 80vh; /* Prevents it from being taller than screen */
+    }
+    
+    .modal img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
         
         /* Close button */
         .close {
