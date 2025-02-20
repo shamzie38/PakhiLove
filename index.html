@@ -100,20 +100,21 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 30px;
-        font-size: 30px;
-        color: #ff4d79;
+        bottom: 100px;
+        font-size: 50px; /* Bigger arrow */
+        color: #ff4d79; /* Pink color */
         animation: bounce 1s infinite alternate;
+    }
+
+    @keyframes bounce {
+        0% {
+            transform: translateX(-50%) translateY(0);
         }
-    
-        @keyframes bounce {
-            from {
-                transform: translateX(-50%) translateY(0);
-            }
-            to {
-                transform: translateX(-50%) translateY(10px);
-            }
+        100% {
+            transform: translateX(-50%) translateY(15px);
         }
+    }
+
 
 
         /* GIF Button Section */
@@ -169,6 +170,9 @@
         <h1>Happy Valentine's Day My Jaan Pakhi 🖤</h1>
         <p class="subtitle">Are You Ready To Be Showered with Love? </p>
     </div>
+
+    <div class="scroll-arrow">⬇️</div>
+
 
     <!-- Spacer for scrolling effect -->
     <div class="spacer"></div>
