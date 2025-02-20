@@ -435,6 +435,137 @@
     }
 </style>
 
+    <!-- Full-Screen Envelopes Section -->
+<div id="envelope-section" class="full-screen">
+    <h2>Moments When You Made Me Wonder What I Did to Deserve You</h2>
+
+    <!-- Envelopes Grid -->
+    <div class="envelope-grid">
+        <div class="envelope" onclick="showMessage(1)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(2)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(3)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(4)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(5)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(6)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(7)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(8)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(9)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+        <div class="envelope" onclick="showMessage(10)"><img src="https://media.giphy.com/media/wAOrqVpbJdfDAjwcSN/giphy.gif" alt="Envelope"></div>
+    </div>
+</div>
+
+<!-- Hidden Message Popup -->
+<div id="message-popup" class="popup hidden">
+    <div class="popup-content">
+        <span class="close" onclick="closeMessage()">&times;</span>
+        <p id="message-text"></p>
+    </div>
+</div>
+
+<!-- JavaScript for Envelopes -->
+<script>
+    const messages = [
+        "You stayed up late tutoring me for my exams when you had work. You were tired and sleepy but you didn't express a little bit of annoyance. You were determined to help me. ❤️",
+        "Every time you came over to my place, you washed my dishes even when I insisted not to. No one asked you to do those. You just did. 💖",
+        "When I missed my flight and cried for hours, you cried for me. You couldn't bear my pain. No one has ever done this for me. 🥹",
+        "When we first met, I was a bitch to you and hurt your feelings because of my mental health. You never judged me, accused me, or expressed even a bit of anger at me. You continued to love me. 💕",
+        "When we went skiing, YOU TOOK OFF YOUR SKI BOOTS more than 10 times and helped me. You didn’t prioritize yourself at all. You just accompanied me and helped me learn even while learning yourself. 🎿",
+        "When you moved in here, you cleaned the entire house for days, made everything perfect, and welcomed me in the most beautiful way. 🏡💞",
+        "You supported me through all my challenges with school, work, and friendships. You never judged me for my bad decisions. You always uplifted me. 🤍",
+        "You never let me feel alone. You reassured me and made sure I knew I was loved, always. 💕",
+        "Every time I was sad, you found a way to cheer me up, even if it meant being silly or acting like a clown. 🤡😂",
+        "You loved me without conditions. No matter how imperfect I was, you loved me anyway. And that’s why I know we’re meant to be. 💍✨"
+    ];
+
+    function showMessage(index) {
+        document.getElementById("message-text").innerText = messages[index - 1];
+        document.getElementById("message-popup").classList.remove("hidden");
+    }
+
+    function closeMessage() {
+        document.getElementById("message-popup").classList.add("hidden");
+    }
+</script>
+
+<!-- Styles for Envelopes -->
+<style>
+    #envelope-section {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #ADD8E6;
+        padding: 50px 0;
+    }
+
+    .envelope-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        max-width: 800px;
+        margin-top: 30px;
+    }
+
+    .envelope img {
+        width: 100px;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .envelope img:hover {
+        transform: scale(1.1);
+    }
+
+    /* Popup Styling */
+    .popup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .popup.hidden {
+        display: none;
+    }
+
+    .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 500px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content p {
+        font-size: 20px;
+        font-family: 'Dancing Script', cursive;
+        color: #f783ac;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        color: black;
+    }
+
+    .close:hover {
+        color: red;
+    }
+</style>
+
 
 
     <script>
