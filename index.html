@@ -74,6 +74,27 @@
             font-weight: bold;
             margin-top: 10px;
         }
+            /* Floating Hearts Styling */
+        .floating-heart {
+            position: fixed;
+            bottom: 0;
+            font-size: 30px;
+            color: rgba(255, 0, 0, 0.7); /* Red hearts with transparency */
+            user-select: none;
+            pointer-events: none;
+            animation: floatUp linear infinite;
+        }
+    
+        @keyframes floatUp {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
@@ -115,6 +136,22 @@
                 alert("Please allow pop-ups to see your surprise! ❤️");
             }
         }
+        function createHeart() {
+        const heart = document.createElement("div");
+        heart.innerText = "❤";
+        heart.classList.add("floating-heart");
+        document.body.appendChild(heart);
+
+        // Random positioning
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // 2s to 5s floating speed
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    setInterval(createHeart, 300); // Creates a heart every 300ms
     </script>
 
 </body>
