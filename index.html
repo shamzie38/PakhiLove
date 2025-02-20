@@ -479,23 +479,26 @@ function prevStorySlide() {
         "You loved me without conditions. No matter how imperfect I was, you loved me anyway.✨"
     ];
 
-     function showMessage(index) {
-        let messagePopup = document.getElementById("message-popup");
-        let messageText = document.getElementById("message-text");
-    
-        // Ensure elements exist before modifying them
-        if (messagePopup && messageText) {
-            messageText.innerText = messages[index - 1];  // Sets the correct message
-            messagePopup.style.display = "flex";  // Ensure popup appears
-        }
+   function showMessage(index) {
+    let messagePopup = document.getElementById("message-popup");
+    let messageText = document.getElementById("message-text");
+
+    // Ensure elements exist before modifying them
+    if (messagePopup && messageText) {
+        messageText.innerText = messages[index - 1];  // Sets the correct message
+        messagePopup.classList.remove("hidden");  // Removes the hidden class
+        messagePopup.style.display = "flex"; // Ensure popup appears
     }
-    
-    function closeMessage() {
-        let messagePopup = document.getElementById("message-popup");
-        if (messagePopup) {
-            messagePopup.style.display = "none";  // Hide the popup
-        }
+}
+
+function closeMessage() {
+    let messagePopup = document.getElementById("message-popup");
+    if (messagePopup) {
+        messagePopup.classList.add("hidden");  // Adds back the hidden class
+        messagePopup.style.display = "none"; // Hide the popup
     }
+}
+
 
 </script>
 
@@ -545,7 +548,7 @@ function prevStorySlide() {
         z-index: 1000;
     }
 
-    #message-popup {
+  #message-popup {
     display: none;  /* Default hidden */
     justify-content: center;
     align-items: center;
@@ -557,6 +560,7 @@ function prevStorySlide() {
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
+
 
 
     .popup-content {
