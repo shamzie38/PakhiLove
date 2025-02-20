@@ -199,6 +199,31 @@
         .close:hover {
             color: red;
         }
+        /* Full-Screen Music Page */
+    #music-section {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #ADD8E6; /* Same blue background */
+    }
+    
+    #music-section h2 {
+        font-size: 35px;
+        color: #343a40;
+        margin-bottom: 30px;
+    }
+    
+    /* Music Player Styling */
+    .music-container {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
 
     </style>
 </head>
@@ -255,6 +280,19 @@
             <img src="https://media.tenor.com/icskYxNdY0wAAAAM/so-hot-the-things-they-do.gif" alt="So Hot GIF">
         </div>
     </div>
+    <!-- Full-Screen Music Section -->
+    <div id="music-section" class="full-screen">
+        <h2>I want to revisit how we met, but first, let's play some music.</h2>
+    
+        <!-- Music Player -->
+        <div class="music-container">
+            <audio id="background-music" controls>
+                <source src="https://cdn.jsdelivr.net/gh/shamzie38/PakhiLove/Joji%20-%20Like%20You%20Do%20(Lyric%20Video).mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
 
     <script>
         function openModal() {
