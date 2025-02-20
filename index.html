@@ -28,6 +28,16 @@
             font-size: 30px;
             font-family: 'Chewy', cursive;
         }
+    
+            /* Video Player Styling */
+    .video-player {
+        width: 80%;  /* Adjust width */
+        max-width: 700px; /* Prevents it from being too big */
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
 
         /* Love Letters Container */
         .love-letters {
@@ -297,6 +307,18 @@
             </audio>
         </div>
     </div>
+
+        <!-- Full-Screen Video Section -->
+    <div id="video-section" class="full-screen">
+        <h2>On August 28th 2022 I made a mistake.. but it happened to be the greatest mistake I ever made.</h2>
+    
+        <!-- Video Player -->
+        <video controls class="video-player">
+            <source src="https://i.imgur.com/SyQDLNf.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
 
 
     <script>
