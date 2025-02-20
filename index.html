@@ -106,26 +106,18 @@
 
 
 
-    <!-- Left side button -->
-    <button class="left-button" onclick="showPopup()">What I Think of You? (Click Here Please)</button>
-
-    <!-- Modal (Popup Window) -->
-    <div id="popup" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <h2>You Are Gay! ❤️</h2>
-            <img src="https://i.imgur.com/Hslk0C7.jpeg" alt="Love Image">
-
-        </div>
+      <!-- PASTE THE GIF BUTTON CODE HERE -->
+    <div class="gif-container">
+        <button class="gif-button" onclick="showPopup()">
+            <img src="https://i.imgur.com/JdgjoYd.gif" alt="GIF Button">
+        </button>
+        <p class="gif-title">What I Think of You ❤️<br>Click Here!</p>
     </div>
 
+    <!-- JavaScript for Popup -->
     <script>
         function showPopup() {
-            document.getElementById("popup").style.display = "block";
-        }
-
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
+            alert("You are my favorite person! ❤️");
         }
     </script>
 
