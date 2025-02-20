@@ -6,107 +6,100 @@
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 
-
     <title>Valentine's Surprise</title>
+
     <style>
         body {
-            font-family: 'Chewy', cursive;;
+            font-family: 'Chewy', cursive;
             background-color: #ADD8E6; /* Light Sky Blue */
             margin: 0;
             padding: 0;
-        }
-        .dancing-text {
-            font-family: 'Dancing Script', cursive;
             text-align: center;
-            font-size: 30px;
-            color: #343a40 ; /* Cute pink */
-            margin-top: 50px; /* Adds spacing below subtitle */
-         }
+        }
+
+        /* First section - Title and subtitle centered in full view */
+        .header-container {
+            height: 100vh; /* Takes full screen */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
         h1 {
             color: white;
-            text-align: center;
-            font-size: 80px; /* Increase the number for a bigger size */
-            font-weight: bold; /* Makes it thicker */
+            font-size: 80px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
-        p { color: #f06595;
-            text-align: center;
-            font-size: 40px;
-        }
-        <p class="dancing-text"> I  💖</p>
 
-        /* Button on the left side */
-        .left-button {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #ff4d79;
-            color: white;
-            font-size: 18px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
+        p.subtitle {
+            color: #f06595;
+            font-size: 40px;
+            margin-bottom: 50px;
         }
-        .left-button:hover {
-            background-color: #ff1a66;
+
+        /* Spacing for the next section */
+        .spacer {
+            height: 150px; /* Adds space before the message */
         }
-        /* Modal (popup window) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-        }
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 50%;
-            text-align: center;
-            position: relative;
-        }
-        .modal img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        /* Close button */
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
+
+        /* Message styling */
+        .dancing-text {
+            font-family: 'Dancing Script', cursive;
             font-size: 30px;
-            cursor: pointer;
-            color: black;
+            color: #343a40;
+            padding: 0 20px; /* Prevents text from touching screen edges */
         }
-        .close:hover {
-            color: red;
+
+        /* GIF Button Section */
+        .gif-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 80px; /* Extra space before the GIF */
+        }
+
+        .gif-button img {
+            width: 150px; /* Smaller GIF */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .gif-title {
+            font-size: 20px;
+            color: #ff4d79;
+            font-weight: bold;
+            margin-top: 10px;
         }
     </style>
 </head>
+
 <body>
 
-    <h1>Happy Valentine's Day My Jaan Pakhi 🖤</h1>
-    <p>Are You Ready To Be Showered with Love? 🍆💦</p>
+    <!-- Title and Subtitle Fullscreen -->
+    <div class="header-container">
+        <h1>Happy Valentine's Day My Jaan Pakhi 🖤</h1>
+        <p class="subtitle">Are You Ready To Be Showered with Love? 🍆💦</p>
+    </div>
+
+    <!-- Spacer for scrolling effect -->
+    <div class="spacer"></div>
+
+    <!-- Message Section -->
     <p class="dancing-text">
-    Hi Jaan,<br><br>
+        Hi Jaan,<br><br>
+        I know it's been almost a week since Valentine's Day, but I wanted to take my time to make you a nice present.
+        Since I have never learned HTML, and I am not nearly as smart, beautiful, talented, big-dicked 🍆, or handsome as you, I needed some extra time.<br><br>
 
-    I know it's been almost a week since Valentine's Day, but I wanted to take my time to make you a nice present. Since I have never learned HTML, and I am not nearly as smart, beautiful, talented, big-dicked 🍆, or handsome as you, I needed some extra time.<br><br>
+        Hope this makes you cum 💦, cry, or die of laughter. I hope it makes you smile.<br><br>
 
-    Hope this makes you cum 💦 , cry, or die of laughter. I hope it makes you smile.<br><br>
-
-    I love you with all my heart. ❤💖
+        I love you with all my heart. ❤💖
     </p>
 
-
-
-      <!-- PASTE THE GIF BUTTON CODE HERE -->
+    <!-- GIF Button Section -->
     <div class="gif-container">
         <button class="gif-button" onclick="showPopup()">
             <img src="https://i.imgur.com/JdgjoYd.gif" alt="GIF Button">
@@ -114,10 +107,13 @@
         <p class="gif-title">What I Think of You ❤️<br>Click Here!</p>
     </div>
 
-    <!-- JavaScript for Popup -->
+    <!-- JavaScript for Pop-Up -->
     <script>
         function showPopup() {
-            alert("You are my favorite person! ❤️");
+            let popupWindow = window.open("https://i.imgur.com/Hslk0C7.jpeg", "_blank", "width=500,height=500");
+            if (!popupWindow) {
+                alert("Please allow pop-ups to see your surprise! ❤️");
+            }
         }
     </script>
 
